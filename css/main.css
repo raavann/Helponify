@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.scroller{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    scroll-behavior: smooth;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+}
+
+.scroller section {
+    width: 100%;
+    min-height: 100vh;
+    background-size:  cover;
+    scroll-snap-align: start;
+}
+
+.home {
+    font-size: 100px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: aliceblue;
+    justify-content: center;
+    font-weight: 700;
+
+    max-height: 100vh;
+}
+
+.followingText {
+    font-family: 'Poppins', sans-serif;
+    color: aliceblue;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 300;
+}
+
+
+
+
+.knowMore {
+    background-color: green;
+}
+
+.about {
+    background-color: red;
+}
+
+.chat{
+    background-color: aqua;
+}
+
+footer {
+    size: 100px;
+}
