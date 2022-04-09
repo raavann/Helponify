@@ -18,6 +18,24 @@ const questions = {
              "responses":[ "Good", "fine" ],
              "points":[ 1, 2 ]
           },
+
+          {
+            "question":"bd How are you feeling?",
+            "responses":[ "Good", "bad" ],
+            "points":[ 1, 2 ]
+         },
+
+         {
+            "question":"bd What is up?",
+            "responses":[ "Good", "fine" ],
+            "points":[ 1, 2 ]
+         },
+
+         {
+            "question":"bd And yourr problem is?",
+            "responses":[ "Good", "fine" ],
+            "points":[ 1, 2 ]
+         }
        ],
  
        "totalPoints":6

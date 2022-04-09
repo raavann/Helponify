@@ -97,7 +97,7 @@ function loadQuestion(questionNum){
 
     } else {
         giveScore();
-        chatBottom.scrollIntoView(false);
+        chatBottom.scrollIntoView(true);
 
     }
 }
@@ -115,7 +115,7 @@ function giveScore(){
     }
 
     $("#chatbox").append(htm);
-    chatBottom.scrollIntoView(false);
+    chatBottom.scrollIntoView(true);
 
     if (percScore >= 0.35){
         let city = getCity();
