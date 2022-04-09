@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 *{
     margin: 0px;
     padding: 0px;
+    scroll-behavior: smooth;
 }
 
 .scroller{
@@ -21,12 +22,13 @@
     scroll-snap-align: start;
 }
 
-.home {
+#home {
     font-size: 100px;
     text-align: center;
     font-family: 'Poppins', sans-serif;
-    color: aliceblue;
-    justify-content: center;
+
+    color: #345995;
+
     font-weight: 700;
 
     max-height: 100vh;
@@ -34,24 +36,24 @@
 
 .followingText {
     font-family: 'Poppins', sans-serif;
-    color: aliceblue;
+    color: #345995;
     font-size: 30px;
     font-style: italic;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 
 
 
-.knowMore {
+#knowMore {
     background-color: #FE7E6D;
 }
 
-.about {
+#about {
     background-color: rgb(160, 238, 245);
 }
 
-.chat{
+#chat{
     background-color: #f1edda;
 }
 

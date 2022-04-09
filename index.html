@@ -4,29 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot</title>
-    <link rel="stylesheet" href="./css/chatbot.css">
+    
+    <title>Helponify</title>
+    
+    <link rel="stylesheet" href="./css/widget.css">
     <link rel="stylesheet" href="./css/main.css">
+    
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
-     integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" 
-     crossorigin="anonymous" referrerpolicy="no-referrer" />
-     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-    <script src="index.js"></script>
-    <script>
-    $( function() {
-        $( ".fab-wrapper" ).draggable({containment :"document"});
-      
-    } );
-    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+    <script src="./scripts/index.js"></script>
     
 
 </head>
@@ -35,23 +31,20 @@
 
   <div class="scroller">
 
-    <section class="home">
-      <a id="home"></a>
+    <section id="home">
       <h1>Helponify</h1>
       <h2 class = "followingText">You will smile again.</h2>
     </section>
 
-    <section class="chat">
-      <a id="chat">chat</a>
-    </section>
-
-    <section class="knowMore">
-      <a id="knowMore">know more</a>
+    <section id="chat">
 
     </section>
 
-    <section class="about">
-      <a id="about">about</a>
+    <section id="knowMore">
+
+    </section>
+
+    <section id="about">
 
     </section>
 
@@ -59,6 +52,9 @@
 
   </div>        
   
+
+
+  <!--  WIDGET -->
   <footer>
     <div class="fab-wrapper">
         <input id="fabCheckbox" type="checkbox" class="fab-checkbox" />
@@ -89,6 +85,9 @@
     </div>
 
   </footer>
+
+  <!-- TOUCH PUNCH JQUERY FOR DRAGGING IN TOUCH SCREENS -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 
 </body>
 
