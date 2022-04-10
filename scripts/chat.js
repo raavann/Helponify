@@ -39,6 +39,24 @@ document.querySelector('.chatWindow').addEventListener("click", function () {
     }
 });
 
+document.querySelector('#cross').addEventListener("click", function () {
+    coll.classList.toggle("active");
+
+    var content = coll.nextElementSibling;
+
+    if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+    } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+    }
+
+    if(!firstmsg){
+        // Send first bot message
+        firstBotMessage();
+        firstmsg=true;
+    }
+});
+
 
 
 function firstBotMessage() {
