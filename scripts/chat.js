@@ -1,5 +1,5 @@
 // Collapsible
-var coll = document.getElementsByClassName("collapsible");
+var coll = document.querySelector(".collapsible");
 
 let __score__=0;    // current score
 let __total__ = 0;  // total score
@@ -7,6 +7,7 @@ let __questionCount__ = 0;  // index of question
 let __selected__ = 'null';  // selected test in drop down menu
 
 let __uCity__ = '';  // user city
+let firstmsg = false;
 
 // based on user's address we will match a perfect doctor for him/her.
 /*
@@ -20,20 +21,24 @@ let __uCity__ = '';  // user city
 
 const chatBottom = document.getElementById("chat-bar-bottom")
 
-// for (let i = 0; i < coll.length; i++) {
-//     coll[i].addEventListener("click", function () {
-//         this.classList.toggle("active");
+document.querySelector('.chatWindow').addEventListener("click", function () {
+    coll.classList.toggle("active");
 
-//         var content = this.nextElementSibling;
+    var content = coll.nextElementSibling;
 
-//         if (content.style.maxHeight) {
-//             content.style.maxHeight = null;
-//         } else {
-//             content.style.maxHeight = content.scrollHeight + "px";
-//         }
+    if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+    } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+    }
 
-//     });
-// }
+    if(!firstmsg){
+        // Send first bot message
+        firstBotMessage();
+        firstmsg=true;
+    }
+});
+
 
 
 function firstBotMessage() {
@@ -65,8 +70,7 @@ function dropdown(){
 
 }
 
-// Send first bot message
-firstBotMessage();
+
 
 // questioning
 function questioning(select){

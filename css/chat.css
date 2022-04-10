@@ -1,19 +1,32 @@
+.chat-bar-collapsible {
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+}
+
+.collapsible  {
+    background-color: rgba(0, 0, 0, 0);
+    display: none;
+}
+
+#cross{
+    size: 50px;
+}
+
 .content {
-    height: 100vh;
-    display: flex;
-    flex-direction: column-reverse;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 }
 
 .full-chat-block {
-    padding: 6vh 15vh;
-
-    max-width: 700px;
-    min-width: 80vh;
+    width: 350px;
+    background: white;
     text-align: center;
-    overflow-y: scroll;
-    overflow-x: hidden;
-   
+    overflow: auto;
+    scrollbar-width: none;
     height: max-content;
+    transition: max-height 0.2s ease-out;
 }
 
 .full-chat-block::-webkit-scrollbar{ width :0px; }
@@ -68,6 +81,8 @@ body::-webkit-scrollbar{ width :0px; }
     opacity: .7;
 }
 
+
+/* Chat bubbles */
 
 #userInput {
     width: 75%;
