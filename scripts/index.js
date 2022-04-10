@@ -6,3 +6,4 @@ $( function() {
     $("#knowMore").load("./html/knowMore.html"); 
     $("#about").load("./html/about.html");
 } );
+  

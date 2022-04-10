@@ -43,9 +43,6 @@
     font-weight: 400;
 }
 
-
-
-
 #knowMore {
     background-color: #FE7E6D;
 }
@@ -53,8 +50,14 @@
 
 #about {
     background-color: rgb(160, 238, 245);
-}
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
 
+    color: #345995;
+
+    font-weight: 500;
+}
 #chat{
     background-color: #f1edda;
     scroll-snap-align: end;
