@@ -62,7 +62,6 @@ function dropdown(){
     }
 
     $("#chatbox").append(optionHtml);
-    chatBottom.scrollIntoView(false);
 
 }
 
