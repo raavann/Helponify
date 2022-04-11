@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/raavann/Helponify.git"
@@ -20,7 +21,12 @@
     "nodemon": "^2.0.15"
   },
   "dependencies": {
+    "@vscode/sqlite3": "^5.0.8",
+    "axios": "^0.26.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "lokijs": "^1.5.12"
+    "knex": "^1.0.5",
+    "mysql2": "^2.3.3"
   }
 }

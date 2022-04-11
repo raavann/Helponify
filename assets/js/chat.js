@@ -9,6 +9,8 @@ let __selected__ = 'null';  // selected test in drop down menu
 let __uCity__ = '';  // user city
 let firstmsg = false;
 
+let cityFlag = false;
+
 // based on user's address we will match a perfect doctor for him/her.
 /*
 +------------------------------------+
@@ -21,7 +23,10 @@ let firstmsg = false;
 
 const chatBottom = document.getElementById("chat-bar-bottom")
 
-document.querySelector('.chatWindow').addEventListener("click", function () {
+document.querySelector('.chatWindow').addEventListener("click", collapse);
+document.querySelector('#cross').addEventListener("click", collapse);
+
+function collapse(){
     coll.classList.toggle("active");
 
     var content = coll.nextElementSibling;
@@ -37,27 +42,7 @@ document.querySelector('.chatWindow').addEventListener("click", function () {
         firstBotMessage();
         firstmsg=true;
     }
-});
-
-document.querySelector('#cross').addEventListener("click", function () {
-    coll.classList.toggle("active");
-
-    var content = coll.nextElementSibling;
-
-    if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-    } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-    }
-
-    if(!firstmsg){
-        // Send first bot message
-        firstBotMessage();
-        firstmsg=true;
-    }
-});
-
-
+}
 
 function firstBotMessage() {
     let time = (function getTime() {
@@ -127,9 +112,9 @@ function giveScore(){
     let percScore = __score__ / __total__;
 
     let htm = '';
-    if(percScore < 0.35){
+    if(percScore < 0.25){
         htm = `<p class="botText"><span> You're fine! </span></p>`
-    } else if( percScore < 0.65){
+    } else if( percScore < 0.75){
         htm = `<p class="botText"><span> You might need help! Please enter your city so we may help you reach a good doctor! </span></p>`
     } else {
         htm = `<p class="botText"><span> You need help right now! Please enter your city so we may help you reach a good doctor! </span></p>`
@@ -139,22 +124,52 @@ function giveScore(){
     chatBottom.scrollIntoView(true);
 
     if (percScore >= 0.35){
-        let city = getCity();
+
+        removeEvent(sendButton);
+
+        addEvent(getCity);
     }
 
-    reset();
+    // reset();
 }
 
-function getCity(){
-    let userText = $("#textInput").val();
+function addEvent(event){
+    document.querySelector('.fa-send').addEventListener('click', event);
+    document.querySelector('#textInput').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            event();
+        }
+    });
+}
 
-    let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
+function removeEvent(event){
+    document.querySelector('.fa-send').removeEventListener('click', event);
+    document.querySelector('#textInput').removeEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            event();
+
+        }
+    });
+}
+
+import axios from "axios";
+
+function getCity(){
+
+    let city = $("#textInput").val();
+
+    let userHtml = '<p class="userText"><span>' + city + '</span></p>';
 
     $("#textInput").val("");
     $("#chatbox").append(userHtml);
     chatBottom.scrollIntoView(true);
 
-    return userText;
+    removeEvent(getCity);
+    addEvent(sendButton);
+    // if city in doctors database send list of available doctors
+
+    axios.get(`localhost:3001/doctors/${city}`)
+
 }
 
 function updateScore(optionValue){
@@ -215,12 +230,7 @@ function heartButton() {
     buttonSendText('❤️')
 }
 
-// Press enter to send a message
-$("#textInput").keypress(function (e) {
-    if (e.which == 13) {
-        getResponse();
-    }
-});
+addEvent(sendButton);
 
 function reset(){
     __total__ = 0;
