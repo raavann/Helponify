@@ -153,7 +153,7 @@ function removeEvent(event){
 }
 
 
-import {getDoc, insertUser} from '../../app'
+// import {getDoc, insertUser} from '../../app.js'
 
 function getCity(){
 
@@ -168,12 +168,25 @@ function getCity(){
  
     // if city in doctors database send list of available doctors
 
-    let docs = getDoc();
-    console.log(docs);
-    for (let index = 0; index < docs.length; index++) {
-        const element = docs[index];
-        
+    let htm = '';
+    if(city == 'indore'){
+
+    
+    htm = `<p class="botText"><span> Dr. Shetti is available in indore </span></p>`
+    } else {
+        htm = `<p class="botText"><span> Sorry no doctor available in your city </span></p>`
     }
+
+    // let docs = getDoc();
+    // console.log(docs);
+    // for (let index = 0; index < docs.length; index++) {
+    //     const element = docs[index];
+        
+    // }
+
+    $("#chatbox").append(htm);
+    chatBottom.scrollIntoView(true);
+
 
     removeEvent(getCity);
     addEvent(sendButton);

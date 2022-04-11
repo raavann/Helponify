@@ -90,7 +90,7 @@ app.post('/users', (req, res) => {
     response.status(201).send(`User added with ID: ${result.insertId}`);
 });
 
-exports.getDoc = function() {
+function getDoc() {
     pool.query(`SELECT * FROM doctors where city ='${city}' and available=1`, function (error, results, fields) {
         if (error) throw error;
 
@@ -101,10 +101,12 @@ exports.getDoc = function() {
     });
 };
 
-exports.insertUser = function(user) {
+function insertUser(user) {
     pool.query(`Insert into users (ipAddress, city, pScore, testTaken) values (${user['ipAddress']}, ${user['city']}, ${user['pScore']}, ${user['testTaken']})` , 
         function (error, results, fields) {
             if (error) throw error;
         }
     );
 };
+
+export{ getDoc, insertUser}
