@@ -43,13 +43,6 @@
 
 #knowMore {
     background-color: #FE7E6D;
-    font-size: 50px;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-
-    color: #345995;
-
-    font-weight: 500;
 }
 
 
@@ -62,6 +55,15 @@
     color: #345995;
 
     font-weight: 500;
+}
+#about h1 {
+    text-align: center;
+}
+
+#about .info {
+    background-color: #9ccaed;
+    font-size: 40px;
+    padding: 1.5em;
 }
 #chat{
     background-color: #f1edda;
