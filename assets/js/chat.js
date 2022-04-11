@@ -152,7 +152,8 @@ function removeEvent(event){
     });
 }
 
-import axios from "axios";
+
+import {getDoc, insertUser} from '../../app'
 
 function getCity(){
 
@@ -164,12 +165,18 @@ function getCity(){
     $("#chatbox").append(userHtml);
     chatBottom.scrollIntoView(true);
 
-    removeEvent(getCity);
-    addEvent(sendButton);
+ 
     // if city in doctors database send list of available doctors
 
-    axios.get(`localhost:3001/doctors/${city}`)
+    let docs = getDoc();
+    console.log(docs);
+    for (let index = 0; index < docs.length; index++) {
+        const element = docs[index];
+        
+    }
 
+    removeEvent(getCity);
+    addEvent(sendButton);
 }
 
 function updateScore(optionValue){
@@ -230,7 +237,7 @@ function heartButton() {
     buttonSendText('❤️')
 }
 
-addEvent(sendButton);
+// addEvent(sendButton);
 
 function reset(){
     __total__ = 0;
