@@ -56,6 +56,15 @@
 
     font-weight: 500;
 }
+#about h1 {
+    text-align: center;
+}
+
+#about .info {
+    background-color: #9ccaed;
+    font-size: 40px;
+    padding: 1.5em;
+}
 #chat{
     background-color: #f1edda;
     scroll-snap-align: end;
