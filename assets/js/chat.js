@@ -52,7 +52,8 @@ function firstBotMessage() {
         return today;
     })();
 
-    $("#chat-timestamp").append(time);
+    // $("#chat-timestamp").append(time);
+    document.querySelector('#chat-timestamp').innerHTML = time;
     dropdown()
 
 }
@@ -78,7 +79,7 @@ function dropdown(){
 // questioning
 function questioning(select){
     if(select.value == 'null'){
-        reset();
+        resetVal();
         return;
     }
 
@@ -246,13 +247,16 @@ function sendButton() {
     getResponse();
 }
 
-function heartButton() {
-    buttonSendText('❤️')
+function reset() {
+    // buttonSendText('')
+    resetVal();
+    // firstmsg = false;
+    firstBotMessage();
 }
 
 // addEvent(sendButton);
 
-function reset(){
+function resetVal(){
     __total__ = 0;
     __score__ = 0;
     __questionCount__ = 0;
