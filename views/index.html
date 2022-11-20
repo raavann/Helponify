@@ -1,66 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Helponify</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="shortcut icon" type="image/jpg" href="/img/H.jpg"/>
-  
-  <link rel="stylesheet" href="/css/widget.css">
-  <link rel="stylesheet" href="/css/main.css">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+    <title>Helponify</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" type="image/jpg" href="/img/H.jpg" />
 
+    <link rel="stylesheet" href="/css/widget.css" />
+    <link rel="stylesheet" href="/css/main.css" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
 
-  <script src="/js/index.js"></script>
-    
+    <script src="/js/index.js"></script>
+  </head>
 
-</head>
+  <body>
+    <div class="scroller">
+      <div id="chat" style="height: 0"></div>
+      <section id="home">
+        <h1>Helponify</h1>
+        <h2 class="followingText">You will smile again.</h2>
+        <h2
+          class="followingText"
+          style="position: absolute; right: 5vw; top: 10vh"
+        >
+          <a href="login.html">Login</a>
+        </h2>
+      </section>
+      <section></section>
+      <section id="about">
+        <h1>About Us</h1>
+      </section>
 
-<body>
+      <section id="knowMore"></section>
+    </div>
 
-  <div class="scroller">
-
-    <div id="chat" style="height: 0;"></div>
-    <section id="home">
-      <h1>Helponify</h1>
-      <h2 class = "followingText">You will smile again.</h2>
-    </section>
-
-    <section id="about">
-      <h1>About Us</h1>
-    </section>
-
-
-    <section id="knowMore">
-    </section>
-
-    
-
-  </div>        
-  
-
-
-  <!--  WIDGET -->
-  <footer>
-    <div class="fab-wrapper">
+    <!--  WIDGET -->
+    <footer>
+      <div class="fab-wrapper">
         <input id="fabCheckbox" type="checkbox" class="fab-checkbox" />
         <label class="fab" for="fabCheckbox">
           <span class="fab-dots fab-dots-1"></span>
@@ -68,12 +78,9 @@
           <span class="fab-dots fab-dots-3"></span>
         </label>
         <div class="fab-wheel">
-
           <a class="fab-action fab-action-1 chatWindow" title="Chat">
             <i class="fa fa-comment"></i>
           </a>
-
-          
 
           <a class="fab-action fab-action-2" href="#knowMore" title="Know more">
             <i class="fa fa-book"></i>
@@ -83,19 +90,14 @@
             <i class="fa fa-info"></i>
           </a>
 
-          <a class="fab-action fab-action-4" href="#home"  title="Home">
+          <a class="fab-action fab-action-4" href="#home" title="Home">
             <i class="fa fa-home"></i>
           </a>
-
         </div>
-    </div>
+      </div>
+    </footer>
 
-  </footer>
-
-  <!-- TOUCH PUNCH JQUERY FOR DRAGGING IN TOUCH SCREENS -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-
-</body>
-
-
+    <!-- TOUCH PUNCH JQUERY FOR DRAGGING IN TOUCH SCREENS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+  </body>
 </html>
