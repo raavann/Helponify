@@ -20,7 +20,9 @@ app.use('/db', express.static(path.join(__dirname, "assets/db")));
 
 // path for views
 app.use('/views', express.static(path.join(__dirname, "views")));
-
+app.use(express.urlencoded({
+    extended: true
+  }))
 
 // import cors from 'cors';
 // app.use(cors())
@@ -30,6 +32,25 @@ app.use(express.static(staticPath));
 
 app.listen(port, () => {
     console.log(`HELPONIFY listening at http://localhost:${port}`)
+})
+app.post('/submit-login', (req, res) => {
+    const username = req.body.username
+    const password = req.body.password
+
+    if(username === 'drshetty' && password === 'drshetty'){
+        res.redirect('/home');
+    }else{
+        // res.redirect('/login');
+        res.end();
+        // window.alert("Invalid username or password");
+    }
+  })
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, '/views/login.html'))
+})
+
+app.get('/home', (req, res) => {
+    res.sendFile(path.join(__dirname, '/views/home.html'))
 })
 
 
@@ -110,3 +131,14 @@ function insertUser(user) {
 };
 
 export{ getDoc, insertUser}
+
+// WEBSOCKET
+import { Server } from "socket.io";
+const io = new Server(3002);
+
+io.on("connection", (socket) => {
+    socket.on('send-chat-message',message=>{
+        console.log(message);
+        socket.broadcast.emit('chat-message',message);
+    })
+});

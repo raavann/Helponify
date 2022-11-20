@@ -51,10 +51,12 @@
     font-size: 50px;
     text-align: center;
     font-family: 'Poppins', sans-serif;
-
     color: #345995;
-
     font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7vh;
 }
 #about h1 {
     text-align: center;
@@ -64,6 +66,7 @@
     background-color: #9ccaed;
     font-size: 40px;
     padding: 1.5em;
+    border-radius: 50px;
 }
 #chat{
     background-color: #f1edda;

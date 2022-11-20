@@ -4,9 +4,14 @@
     margin: 1%;
 }
 .info p{
-    font-size: 35px;
+    font-size: 27px;
     font-family: 'Poppins', sans-serif;
     color: #345995;
     text-align: justify;
     padding: 2px;
+    margin: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

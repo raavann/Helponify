@@ -113,8 +113,8 @@ function giveScore(){
     let percScore = __score__ / __total__;
 
     let htm = '';
-    if(percScore < 0.25){
-        htm = `<p class="botText"><span> You're fine! </span></p>`
+    if(percScore < 0.5){
+        htm = `<p class="botText"><span> You're just fine! Don't overthink things, you don't need a doctor's help! </span></p>`
     } else if( percScore < 0.75){
         htm = `<p class="botText"><span> You might need help! Please enter your city so we may help you reach a good doctor! </span></p>`
     } else {
@@ -173,7 +173,7 @@ function getCity(){
     if(city == 'indore'){
 
     
-    htm = `<p class="botText"><span> Dr. Shetti is available in indore </span></p>`
+    htm = `<p class="botText"><span> Dr. Shetti is available in indore<br>Mob no. 6261199122,<br> wait we are connecting you to him! </span></p>`
     } else {
         htm = `<p class="botText"><span> Sorry no doctor available in your city </span></p>`
     }
@@ -261,4 +261,37 @@ function resetVal(){
     __score__ = 0;
     __questionCount__ = 0;
     __selected__ = 'null';
+}
+
+// websocket
+const socket = io('http://localhost:3002', { transports: ['websocket', 'polling', 'flashsocket'] });
+// const chatBottom = document.getElementById('chat-bar-bottom');
+
+socket.on('chat-message', data => {
+    console.log(data)
+    // append(data,false);
+    append(data,false);
+})
+
+$("#textInput").on('keyup', function (e) {
+    if (e.keyCode === 13) {
+       e.preventDefault();
+       const msg = $(this).val();
+       socket.emit('send-chat-message',msg);
+       $(this).val('');
+       append(msg, true);
+    }
+ });
+
+function append(msg,isRec){
+    let htm = ''
+    if(isRec){
+        htm = `<p class="botText"><span>${msg}</span></p>`
+    } else{
+        htm = `<p class="userText"><span>${msg}</span></p>`
+    }
+
+    $("#chatbox").append(htm);
+    // document.querySelector('#chatbox').append(htm);
+    chatBottom.scrollIntoView(true);
 }

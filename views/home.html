@@ -1,24 +1,27 @@
-<link rel="stylesheet" href="/css/chat.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <!-- <link rel="stylesheet" href="../css/chat.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-
-<!-- CHAT BAR BLOCK -->
-<div class="chat-bar-collapsible">
-    <button id="chat-button" type="button" class="collapsible">  
-    </button>
-
-
-
+</head>
+<body>
     <div class="content">
-        <div id="cross">  
-            <i class="fa-solid fa-xmark" ></i>
-        </div>
-
         <div class="full-chat-block">
+            <div class="list-container">
+                Inbox
+                <div class="user01">
+                    <!-- Msg from Indore -->
+                </div>
+
+            </div>
             <!-- Message Container -->
             <div class="outer-container">
-
                 <div class="chat-container">
                     <!-- Messages -->
                     <div id="chatbox">
@@ -37,8 +40,8 @@
                         <div class="chat-bar-icons">
                             <!-- <i title="Reset" id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
                                 onclick="heartButton()"></i> -->
-                            <i title="Reset" id="send-chat" class="chat-icon" onclick="reset()" class="fa-solid fa-arrow-rotate-left"></i>
-                            <i title="Send" id="send-chat" class="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                            <i title="Reset" id="chat-icon" onclick="reset()" class="fa-solid fa-arrow-rotate-left"></i>
+                            <i title="Send" id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
                                 ></i>
                         </div>
                     </div>
@@ -52,15 +55,9 @@
 
         </div>
     </div>
-</div>
-
-<!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+</body>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="http://localhost:3002/socket.io/socket.io.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-<script src="/db/questions.js"></script>
-<script src="/db/responses.js"></script>
-<script src="/js/chat.js"></script>
-
-<!-- <script src="/js/chatting.js"></script> -->
+<script src="/js/chatting.js"></script>
+</html>

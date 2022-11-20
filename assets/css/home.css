@@ -1,3 +1,8 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 .chat-bar-collapsible {
     position: fixed;
     bottom: 0;
@@ -25,15 +30,23 @@ a:hover{
 }
 
 .content {
-    max-height: 0;
+    height: 100vh;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lavender;
+    flex-direction: row;
 }
 
 .full-chat-block {
     border-radius: 10px;
     padding: 3px;
-    width: 350px;
+    display: flex;
+    max-width: 775px;
+    width: 80%;
     background: rgba(255, 255, 255, 0.3);
     text-align: center;
     overflow: auto;
@@ -41,6 +54,8 @@ a:hover{
     height: max-content;
     box-shadow: 5px solid black;
     transition: max-height 0.2s ease-out;
+    flex-direction: row;
+    background-color: mediumslateblue;
 }
 
 .full-chat-block::-webkit-scrollbar{ width :0px; }
@@ -50,6 +65,7 @@ body::-webkit-scrollbar{ width :0px; }
     min-height: 80vh;
     bottom: 0%;
     position: relative;
+    width: 100%;
 }
 
 .chat-container {
@@ -91,9 +107,8 @@ body::-webkit-scrollbar{ width :0px; }
     font-size: 20px;
 }
 
-.chat-icon:hover {
+#chat-icon:hover {
     opacity: .7;
-    cursor: pointer;
 }
 
 
@@ -179,6 +194,14 @@ body::-webkit-scrollbar{ width :0px; }
 
     border: 1px solid black;
     padding: 6px 9px;
+}
+
+.list-container{
+    width: 40%;
+    padding: 10px;
+    margin: 10px;
+    background-color: lavender;
+    border-radius: 10px;
 }
 
 @keyframes floatup {

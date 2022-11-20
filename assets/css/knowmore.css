@@ -4,6 +4,9 @@
     width: auto;
 
 }
+.d-none{
+    display: none;
+}
 .book button{
     display: block;
     height: 100px;
